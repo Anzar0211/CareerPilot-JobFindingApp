@@ -54,13 +54,13 @@ export const candidateOnboardFormControls = [
   {
     label: "Current Salary",
     name: "currentSalary",
-    placeholder: "Enter your current salary",
+    placeholder: "Enter your current salary(in LPA)",
     componentType: "input",
   },
   {
     label: "Notice Period",
     name: "noticePeriod",
-    placeholder: "Enter your notice period",
+    placeholder: "Enter your notice period(in Days/Months)",
     componentType: "input",
   },
   {
@@ -78,7 +78,7 @@ export const candidateOnboardFormControls = [
   {
     label: "Total Experience",
     name: "totalExperience",
-    placeholder: "Enter your total experience",
+    placeholder: "Enter your total experience(in Years)",
     componentType: "input",
   },
   {
@@ -108,7 +108,7 @@ export const candidateOnboardFormControls = [
   {
     label: "Github Profile",
     name: "githubProfile",
-    placeholder: "Enter your Github profile",
+    placeholder: "Enter your Github profile/Enter '#' in case of no Github Profile",
     componentType: "input",
   },
 ];
@@ -174,7 +174,7 @@ export const postNewJobFormControls = [
   {
     label: "Experience",
     name: "experience",
-    placeholder: "Enter job experience",
+    placeholder: "Enter job experience(in Years)",
     componentType: "input",
   },
   {

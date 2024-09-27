@@ -1,6 +1,8 @@
 "use client";
 
 import { Fragment } from "react";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
+
 import { Button } from "../ui/button";
 import { Dialog, DialogContent, DialogFooter, DialogTitle } from "../ui/dialog";
 import {
@@ -8,7 +10,7 @@ import {
   updateJobApplicationAction,
 } from "@/actions";
 import { createClient } from "@supabase/supabase-js";
-
+import Link from "next/link";
 
 const supabaseClient = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
@@ -29,6 +31,7 @@ const CandidateList = ({
       setShowCurrentCandidateDetailsModal(true);
     }
   };
+
   const handlePreviewResume = () => {
     const { data } = supabaseClient.storage
       .from("job-board-public")
@@ -54,17 +57,18 @@ const CandidateList = ({
           getCurrentStatus
         ),
     };
-    // console.log(jobApplicantToUpdate);
     await updateJobApplicationAction(jobApplicantToUpdate, "/jobs");
   };
-  // console.log(jobApplications);
 
   return (
     <Fragment>
       <div className="grid grid-cols-1 gap-3 p-10 md:grid-cols-2 lg:grid-cols-3">
         {jobApplications && jobApplications?.length > 0
-          ? jobApplications.map((applicants,index) => (
-              <div key={index} className="bg-white shadow-lg w-full max-w-sm rounded-lg overflow-hidden mx-auto mt-4">
+          ? jobApplications.map((applicants, index) => (
+              <div
+                key={index}
+                className="bg-white shadow-lg w-full max-w-sm rounded-lg overflow-hidden mx-auto mt-4"
+              >
                 <div className="px-4 my-6 flex justify-between items-center">
                   <h3 className="text-lg font-bold">{applicants?.name}</h3>
                   <Button
@@ -88,7 +92,7 @@ const CandidateList = ({
         }}
       >
         <DialogContent>
-        <DialogTitle className="hidden"></DialogTitle>
+          <DialogTitle className="hidden"></DialogTitle>
           <div>
             <h1 className="text-xl font-extrabold ">
               {currentCandidateDetails?.candidateInfo?.name}
@@ -105,22 +109,25 @@ const CandidateList = ({
             </p>
             <p>
               <span className="font-bold">Salary: </span>
-              {currentCandidateDetails?.candidateInfo?.currentSalary} LPA
+              {currentCandidateDetails?.candidateInfo?.currentSalary}
             </p>
             <p>
               <span className="font-bold">Total Experience: </span>
-              {currentCandidateDetails?.candidateInfo?.totalExperience} Years
+              {currentCandidateDetails?.candidateInfo?.totalExperience}
             </p>
             <p>
               <span className="font-bold">Notice Period: </span>
-              {currentCandidateDetails?.candidateInfo?.noticePeriod} Days
+              {currentCandidateDetails?.candidateInfo?.noticePeriod}
             </p>
             <div className="flex flex-wrap gap-4 mt-6 items-center">
               <h1>Skills : </h1>
               {currentCandidateDetails?.candidateInfo?.skills
                 .split(",")
-                .map((item,index) => (
-                  <div key={index} className="w-[100px] flex justify-center items-center h-[35px] bg-black rounded-[4px]">
+                .map((item, index) => (
+                  <div
+                    key={index}
+                    className="w-[100px] flex justify-center items-center h-[35px] bg-black rounded-[4px]"
+                  >
                     <h2 className="text-[13px] font-medium text-white">
                       {item}
                     </h2>
@@ -132,13 +139,41 @@ const CandidateList = ({
               <div className="flex flex-wrap gap-4 mt-6 items-center">
                 {currentCandidateDetails?.candidateInfo?.previousCompanies
                   .split(",")
-                  .map((item,index) => (
-                    <div key={index} className="w-[100px] flex justify-center items-center h-[35px] bg-black rounded-[4px]">
+                  .map((item, index) => (
+                    <div
+                      key={index}
+                      className="w-[100px] flex justify-center items-center h-[35px] bg-black rounded-[4px]"
+                    >
                       <h2 className="text-[13px] font-medium text-white">
                         {item}
                       </h2>
                     </div>
                   ))}
+              </div>
+            </div>
+            <div className="flex gap-4 mt-6 items-center">
+              <h1>Socials : </h1>
+              <div className="flex gap-4 items-center">
+                {currentCandidateDetails?.candidateInfo?.linkedinProfile && (
+                  <Link
+                    href={currentCandidateDetails?.candidateInfo?.linkedinProfile}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaLinkedin className="text-blue-600 text-2xl" />
+                  </Link>
+                )}
+                {currentCandidateDetails?.candidateInfo?.githubProfile && (
+                  <Link
+                    href={currentCandidateDetails?.candidateInfo?.githubProfile}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaGithub className={currentCandidateDetails?.candidateInfo?.githubProfile==="#"?'hidden'
+                    :"text-black text-2xl"
+                    } />
+                  </Link>
+                )}
               </div>
             </div>
           </div>
@@ -217,4 +252,5 @@ const CandidateList = ({
     </Fragment>
   );
 };
+
 export default CandidateList;
