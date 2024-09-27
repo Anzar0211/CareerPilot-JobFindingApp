@@ -206,6 +206,8 @@ export async function createStripePaymentAction(data) {
     success_url: `${process.env.URL}/membership` + "?status=success",
     cancel_url: `${process.env.URL}/membership` + "?status=cancel",
 
+    //Updated URL
+
     customer: customerId, // Pass the customer ID only
     billing_address_collection: "required", // Required for Indian regulations
   });
