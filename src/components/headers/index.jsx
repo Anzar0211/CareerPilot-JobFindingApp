@@ -66,23 +66,28 @@ const Header = ({user,profileInfo}) => {
                 : null
               ))}
             </div>
-            <UserButton afterSignOutUrl="/" className="z-50"/>
+            
           </SheetContent>
         </Sheet>
         <Link className="hidden md:flex mr-6 font-bold text-3xl" href={"/"}>
         CareerPilot
         </Link>
-        <nav className="ml-auto hidden md:flex gap-6">
-          {
-            menuItems.map((item,index)=>(
-              item.show ? <Link key={index} className="group inline-flex h-9 w-max items-center rounded-md bg-white px-4 py-2 text-sm font-medium" href={item.path}>
-                {item.label}
-              </Link>
-              : null
-            ))
-          }
-          <UserButton afterSignOutUrl="/" className="z-50"/>
-        </nav>
+    <nav className="ml-auto flex items-center">
+      <div className="hidden md:flex gap-6">
+        {menuItems.map((item, index) =>
+          item.show ? (
+            <Link
+              key={index}
+              className="group h-9 w-max items-center rounded-md bg-white px-4 py-2 text-sm font-medium"
+              href={item.path}
+            >
+              {item.label}
+            </Link>
+          ) : null
+        )}
+      </div>
+      <UserButton afterSignOutUrl="/" className="z-50" />
+    </nav>
       </header>
     </div>
   )
