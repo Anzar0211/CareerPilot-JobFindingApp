@@ -13,9 +13,9 @@ const Home = async () => {
     <Fragment>
       <section className="relative w-full h-full min-h-screen pb-10">
         <div className="relative h-full w-full">
-          <div className="flex flex-col-reverse lg:flex-row gap-10 mt-16">
-            <section className="w-full lg:w-[50%] flex flex-col md:px-2 lg:px-0 p-5 lg:p-10">
-              <div className="w-full flex justify-start flex-col h-auto lg:pt-7">
+          <div className="flex flex-col-reverse md:flex-row gap-10 mt-16">
+            <section className="w-full md:w-[50%] flex flex-col md:px-2 md:px-0 p-5 md:p-10">
+              <div className="w-full flex justify-start flex-col h-auto md:pt-7">
                 <span className="flex space-x-2">
                   <span className="block w-14 mb-2 border-b-2 border-gray-700"></span>
                   <span className="font-medium text-gray-900 text-2xl">
@@ -34,11 +34,11 @@ const Home = async () => {
                 </div>
               </div>
             </section>
-            <section className="relative w-full lg:w-[70%] flex items-center justify-end lg:-mt-20">
+            <section className="relative w-full md:w-[70%] flex items-center justify-end md:-mt-10 lg:-mt-20">
               <img
                 src="https://shorturl.at/msw07"
                 alt="Job Portal"
-                className="h-full w-auto lg:w-full object-contain z-10"
+                className="h-full w-auto md:w-full object-contain z-10"
               />
             </section>
           </div>
