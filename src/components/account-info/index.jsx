@@ -22,7 +22,7 @@ const AccountInfo = ({profileInfo}) => {
             await updateProfileAction(profileInfo?.role==="candidate"?{
                 _id:profileInfo?._id,
                 userId:profileInfo?.userId,
-                email:profileInfo?.role,
+                email:profileInfo?.email,
                 role:profileInfo?.role,
                 isPremiumUser:profileInfo?.isPremiumUser,
                 memberShipType:profileInfo?.memberShipType,
