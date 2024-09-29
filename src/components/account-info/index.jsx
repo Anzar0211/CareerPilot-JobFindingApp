@@ -18,6 +18,7 @@ const AccountInfo = ({profileInfo}) => {
     // console.log(candidateFormData);
 
     const handleUpdateAccount=async()=>{
+        console.log(profileInfo);
         try {
             await updateProfileAction(profileInfo?.role==="candidate"?{
                 _id:profileInfo?._id,
@@ -35,7 +36,7 @@ const AccountInfo = ({profileInfo}) => {
             }:{
                 _id:profileInfo?._id,
                 userId:profileInfo?.userId,
-                email:profileInfo?.role,
+                email:profileInfo?.email,
                 role:profileInfo?.role,
                 isPremiumUser:profileInfo?.isPremiumUser,
                 memberShipType:profileInfo?.memberShipType,
