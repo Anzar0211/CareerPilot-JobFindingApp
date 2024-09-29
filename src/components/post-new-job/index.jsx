@@ -12,7 +12,7 @@ import Link from "next/link"
 
 const PostNewJob = ({user,profileInfo,jobList}) => {
 
-    console.log(jobList,"jobList");
+    // console.log(jobList,"jobList");
 
     const{toast}=useToast()
 
@@ -53,16 +53,28 @@ const PostNewJob = ({user,profileInfo,jobList}) => {
         companyName:profileInfo?.recruiterInfo?.companyName
     })
     const createJob=async()=>{
-        await createJobAction({
-            ...jobFormData,
-            recruiterId:user?.id,
-            applicants:[]
-        },'/jobs')
-        setJobFormData({
-        ...initialPostNewJobFormData,
-        companyName:profileInfo?.recruiterInfo?.companyName
-        })
-        setShowDialog(false)
+        try {
+            await createJobAction({
+                ...jobFormData,
+                recruiterId:user?.id,
+                applicants:[]
+            },'/jobs')
+            setJobFormData({
+            ...initialPostNewJobFormData,
+            companyName:profileInfo?.recruiterInfo?.companyName
+            })
+            setShowDialog(false)
+            toast({
+                title:'Job Posted',
+                description:'Job Posted Successfully',
+            })
+        } catch (error) {
+            toast({
+                variant:"destructive",
+                title:"Something went wrong"
+            })
+        }
+
     }
   return (
     <div>

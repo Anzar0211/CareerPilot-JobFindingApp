@@ -7,10 +7,10 @@ const CommonLayout = async({children}) => {
   const profileInfo=await fetchProfileAction(user?.id);
 
   return (
-    <div className="mx-auto max-w-7xl p-6 lg:px-8">
+      <div className="mx-auto max-w-7xl p-6 lg:px-8">
         <Header profileInfo={profileInfo} user={JSON.parse(JSON.stringify(user))}/>
         <main>{children}</main>
-    </div>
+      </div>
   )
 }
 export default CommonLayout

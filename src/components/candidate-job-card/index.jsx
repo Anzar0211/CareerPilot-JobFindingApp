@@ -40,16 +40,27 @@ const CandidateJobCard = ({jobItem,profileInfo,jobApplications}) => {
             })
             return;
         }
-        await createJobApplicationAction({
-            recruiterUserId:jobItem?.recruiterId,
-            name:profileInfo?.candidateInfo?.name,
-            email:profileInfo?.email,
-            candidateUserId:profileInfo?.userId,
-            status:['Applied'],
-            jobId:jobItem?._id,
-            jobAppliedDate:new Date().toLocaleDateString()
-        },"/jobs")
-        setShowJobDetailsDrawer(false);
+        try {
+            await createJobApplicationAction({
+                recruiterUserId:jobItem?.recruiterId,
+                name:profileInfo?.candidateInfo?.name,
+                email:profileInfo?.email,
+                candidateUserId:profileInfo?.userId,
+                status:['Applied'],
+                jobId:jobItem?._id,
+                jobAppliedDate:new Date().toLocaleDateString()
+            },"/jobs")
+            setShowJobDetailsDrawer(false);            
+            toast({
+                title:"Successfully Applied"
+            })
+        } catch (error) {
+            toast({
+                variant:"destructive",
+                title:"Something went wrong!"
+            })
+        }
+
     }
 
 
