@@ -69,8 +69,8 @@ const CandidateJobCard = ({jobItem,profileInfo,jobApplications}) => {
         <Drawer open={showJobDetailsDrawer} onOpenChange={setShowJobDetailsDrawer}>
             <CommonCard icon={<JobIcon/>} title={jobItem?.title} description={jobItem?.companyName}
             footerContent={
-                <Button onClick={()=>setShowJobDetailsDrawer(true)} className="flex h-11 items-center justify-center px-5">
-                    View Details
+                <Button onClick={()=>setShowJobDetailsDrawer(true)} disabled={jobItem?.isClosed} className="disabled:opacity-25 flex h-11 items-center justify-center px-5">
+                    {jobItem?.isClosed===true ? 'Applications Closed' : 'View Details'}
                 </Button>
             }
             />

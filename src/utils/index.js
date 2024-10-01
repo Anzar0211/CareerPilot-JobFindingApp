@@ -108,7 +108,8 @@ export const candidateOnboardFormControls = [
   {
     label: "Github Profile",
     name: "githubProfile",
-    placeholder: "Enter your Github profile/Enter '#' in case of no Github Profile",
+    placeholder:
+      "Enter your Github profile/Enter '#' in case of no Github Profile",
     componentType: "input",
   },
 ];
@@ -200,6 +201,14 @@ export const initialPostNewJobFormData = {
   description: "",
   skills: "",
 };
+export const initialEditJobFormData = {
+  title: "",
+  type: "",
+  location: "",
+  experience: "",
+  description: "",
+  skills: "",
+};
 
 export const filterMenuData = [
   {
@@ -240,74 +249,73 @@ export function formUrlQuery({ params, dataToAdd }) {
   );
 }
 
-export const candidateToasts=[
+export const candidateToasts = [
   {
-    type:"free Tier",
-    title:"You can apply to maximum 2 Jobs",
-    description:"Upgrade to Premium Plans to post more jobs"
+    type: "free Tier",
+    title: "You can apply to maximum 2 Jobs",
+    description: "Upgrade to Premium Plans to post more jobs",
   },
   {
-    type:"1st Tier",
-    title:"You can apply to maximum 5 Jobs",
-    description:"Upgrade to Silver/Gold plans to apply to more jobs"
+    type: "1st Tier",
+    title: "You can apply to maximum 5 Jobs",
+    description: "Upgrade to Silver/Gold plans to apply to more jobs",
   },
   {
-    type:"2nd Tier",
-    title:"You can apply to maximum 20 Jobs",
-    description:"Upgrade to Gold plan to apply for more jobs"
+    type: "2nd Tier",
+    title: "You can apply to maximum 20 Jobs",
+    description: "Upgrade to Gold plan to apply for more jobs",
   },
-]
-export const recruiterToasts=[
+];
+export const recruiterToasts = [
   {
-    type:"free Tier",
-    title:"You can post maximum 2 Jobs",
-    description:"Upgrade to Premium Plan to post more jobs"
-  },
-  {
-    type:"1st Tier",
-    title:"You can post maximum 5 Jobs",
-    description:"Upgrade to Teams/Enterprise plans to post more jobs"
+    type: "free Tier",
+    title: "You can post maximum 2 Jobs",
+    description: "Upgrade to Premium Plan to post more jobs",
   },
   {
-    type:"2nd Tier",
-    title:"You can post maximum 10 Jobs",
-    description:"Upgrade to Enterprise plans to post more jobs"
+    type: "1st Tier",
+    title: "You can post maximum 5 Jobs",
+    description: "Upgrade to Teams/Enterprise plans to post more jobs",
   },
-]
+  {
+    type: "2nd Tier",
+    title: "You can post maximum 10 Jobs",
+    description: "Upgrade to Enterprise plans to post more jobs",
+  },
+];
 
-export const recruiterMembershipPlans=[
-    {
-        heading:'Tier 1',
-        price:2000,
-        type:'Basic',
-        benefits:[
-            'Post 5 Jobs',
-            'View 10 Resumes',
-            'Select among great working professionals according to requirements'
-        ]
-    },
-    {
-        heading:'Tier 2',
-        price:5000,
-        type:'Teams',
-        benefits:[
-            'Post 10 Jobs',
-            'View 20 Resumes',
-            'Select among great working professionals according to requirements'
-        ]
-    },
-    {
-        heading:'Tier 3',
-        price:10000,
-        type:'Enterprise',
-        benefits:[
-            'Post Unlimited Jobs',
-            'View Unlimited Resumes',
-            'Select among great working professionals according to requirements'
-        ]
-    }
-]
-
+export const recruiterMembershipPlans = [
+  {
+    heading: "Tier 1",
+    price: 2000,
+    type: "Basic",
+    benefits: [
+      "Post 5 Jobs",
+      "View 10 Resumes",
+      "Select among great working professionals according to requirements",
+    ],
+  },
+  {
+    heading: "Tier 2",
+    price: 5000,
+    type: "Teams",
+    benefits: [
+      "Post 10 Jobs",
+      "View 20 Resumes",
+      "Select among great working professionals according to requirements",
+    ],
+  },
+  {
+    heading: "Tier 3",
+    price: 10000,
+    type: "Enterprise",
+    benefits: [
+      "Post Unlimited Jobs",
+      "View Unlimited Resumes",
+      "Select among great working professionals according to requirements",
+    ],
+  },
+];
 
 export const candidateMembershipPlans = [
   {

@@ -9,6 +9,10 @@ const jobSchema = new mongoose.Schema({
   description: String,
   skills: String,
   recruiterId: String,
+  isClosed: {
+    type: Boolean,
+    default: false,
+  },
   applicants: [
     {
       name: String,

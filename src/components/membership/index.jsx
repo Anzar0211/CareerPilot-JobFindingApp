@@ -55,7 +55,7 @@ const Membership = ({ profileInfo }) => {
         const extractPriceId = await createPriceIdAction({
             amount: Number(getCurrentPlan?.price)
         });
-
+        
         if (extractPriceId) {
             sessionStorage.setItem('currentPlan', JSON.stringify(getCurrentPlan));
 

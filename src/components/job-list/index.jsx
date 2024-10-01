@@ -3,11 +3,12 @@
 import { filterMenuData, formUrlQuery } from "@/utils"
 import CandidateJobCard from "../candidate-job-card"
 import PostNewJob from "../post-new-job"
-import RecruiterJobCard from "../recruiter-job-card"
+// import RecruiterJobCard from "../recruiter-job-card"
 import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger } from "../ui/menubar"
 import { Label } from "../ui/label"
 import { useEffect, useState } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
+import RecruiterJobDetailsCard from "../recruiter-job-details-card"
 
 const JobListings = ({user, profileInfo, jobList, jobApplications, filterCategories}) => {
     const [filterParams, setFilterParams] = useState({})
@@ -102,11 +103,10 @@ const JobListings = ({user, profileInfo, jobList, jobApplications, filterCategor
                                                     jobApplications={jobApplications}
                                                 />
                                             ) : (
-                                                <RecruiterJobCard
+                                                <RecruiterJobDetailsCard
                                                     key={index}
                                                     jobItem={job}
                                                     profileInfo={profileInfo}
-                                                    jobApplications={jobApplications}
                                                 />
                                             )
                                         ))

@@ -13,8 +13,8 @@ const HomePageButton = ({ user, profileInfo }) => {
       </div>
     ) : (
       <div className="flex space-x-3">
-        <Button onClick={()=>router.push('/jobs')} className="flex h-11 items-center justify-center px-5">Post Job</Button >
-        <Button onClick={()=>router.push('/membership')}  className="flex h-11 items-center justify-center px-5">View Membership</Button >
+        <Button onClick={()=>router.push('/jobs')} className="flex h-11 items-center justify-center px-5">Post Jobs</Button >
+        <Button onClick={()=>router.push('/applications')}  className="flex h-11 items-center justify-center px-5">View Applications</Button >
       </div>
     )
   ) : (

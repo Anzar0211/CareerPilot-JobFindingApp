@@ -4,7 +4,7 @@ const HomePageText = ({user,profileInfo}) => {
     profileInfo?.role==="candidate"?(
         <>
             <h1 className="text-4xl font-bold md:text-5xl">
-                Welcome Back! <br /> {profileInfo?.candidateInfo?.name}
+                Hey There! <br /> {profileInfo?.candidateInfo?.name}
             </h1>
             <p className="text-xl mt-5">
                 Let's find some Jobs.Shall we?
@@ -14,7 +14,7 @@ const HomePageText = ({user,profileInfo}) => {
     :(
         <>
             <h1 className="text-4xl font-bold md:text-5xl">
-                Welcome Back! <br /> {profileInfo?.recruiterInfo?.name}
+                Hey There! <br /> {profileInfo?.recruiterInfo?.name}
             </h1>
             <p className="text-xl mt-5">
                 Post Jobs and find the best candidates as per your requirements

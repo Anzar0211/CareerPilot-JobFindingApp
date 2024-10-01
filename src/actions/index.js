@@ -10,7 +10,6 @@ import { revalidatePath } from "next/cache";
 //   "sk_test_51OInvuSIwTefMaBqLWTJPq52CDBv0ltkez1R4DNhlazuGw3sOCzBrK5VHPG6735bQiJ7c3aVjkZ5uzOUIkLWUc6w00fRIgfslw"
 // );
 
-
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 export async function createProfileAction(formData, pathToRevalidate) {
@@ -151,6 +150,48 @@ export async function updateJobApplicationAction(data, pathToRevalidate) {
   revalidatePath(pathToRevalidate);
 }
 
+export async function fetchJobByIdAction(jobId) {
+  await connectDB();
+  const result = await Job.findOne({
+    _id: jobId,
+  });
+  return JSON.parse(JSON.stringify(result));
+}
+
+export async function updateJobAction(data, pathToRevalidate) {
+  await connectDB();
+  const { title, location, type, experience, description, skills, _id } = data;
+  await Job.findOneAndUpdate(
+    {
+      _id: _id,
+    },
+    {
+      title,
+      location,
+      type,
+      experience,
+      description,
+      skills,
+    },
+    { new: true }
+  );
+  revalidatePath(pathToRevalidate);
+}
+
+export async function handleCloseJobStatusAction(jobId) {
+  await connectDB();
+
+  try {
+    const job = await Job.findById(jobId);
+    if (job) {
+      job.isClosed = true;
+      await job.save();
+    }
+  } catch (error) {
+    console.error("Error toggling job status:", error);
+  }
+}
+
 export async function filterAction() {
   await connectDB();
   const result = await Job.find({});
@@ -175,10 +216,6 @@ export async function createPriceIdAction(data) {
   };
 }
 
-
-
-
-
 export async function createStripePaymentAction(data) {
   let customerId = data?.customer?.customerId;
 
@@ -195,7 +232,7 @@ export async function createStripePaymentAction(data) {
         state: data?.customer?.address?.state,
       },
     });
-    
+
     customerId = customer.id;
   }
 
