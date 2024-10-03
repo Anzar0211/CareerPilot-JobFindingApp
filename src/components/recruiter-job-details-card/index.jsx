@@ -92,16 +92,16 @@ const RecruiterJobDetailsCard = ({jobItem}) => {
                 description={jobItem.description}
                 footerContent={
                     <div className="flex gap-4">
-                        <Button onClick={() => handleShowJobDetails(jobItem)} className="flex h-11 items-center justify-center px-5 dark:bg-black dark:text-white">
+                        <Button onClick={() => handleShowJobDetails(jobItem)} className="flex h-11 items-center justify-center px-5 ">
                             View 
                         </Button>
-                        <Button onClick={() => handleEditJobDetails(jobItem)} className="flex h-11 items-center justify-center px-5 dark:bg-black dark:text-white">
+                        <Button onClick={() => handleEditJobDetails(jobItem)} className="flex h-11 items-center justify-center px-5 ">
                             Edit
                         </Button>
                         <AlertDialog>
                         <AlertDialogTrigger asChild>
                             <Button
-                            className="flex h-11 items-center justify-center px-5 dark:bg-black dark:text-white"
+                            className="flex h-11 items-center justify-center px-5 "
                             disabled={isClosed} // Disable the button if the job is closed
                             >
                             {isClosed ? "Closed" : "Close"}  {/* Toggle between Close and Closed */}

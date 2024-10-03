@@ -67,15 +67,15 @@ const CandidateList = ({
           ? jobApplications.map((applicants, index) => (
               <div
                 key={index}
-                className="bg-white shadow-lg w-full max-w-sm rounded-lg overflow-hidden mx-auto mt-4"
+                className="bg-white dark:bg-slate-900 dark:border-blue-900 dark:hover:shadow-2xl dark:hover:shadow-blue-950 dark:hover:border-1 shadow-lg w-full max-w-sm rounded-lg overflow-hidden mx-auto mt-4"
               >
                 <div className="px-4 my-6 flex justify-between items-center">
-                  <h3 className="text-lg font-bold dark:text-black">{applicants?.name}</h3>
+                  <h3 className="text-lg font-bold dark:text-white">{applicants?.name}</h3>
                   <Button
                     onClick={() =>
                       handleFetchCandidateDetails(applicants?.candidateUserId)
                     }
-                    className="disabled:opacity-55 flex h-11 items-center justify-center px-5 dark:bg-black dark:text-white"
+                    className="disabled:opacity-55 flex h-11 items-center justify-center px-5"
                   >
                     View Profile
                   </Button>

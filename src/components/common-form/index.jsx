@@ -67,7 +67,7 @@ const CommonForm = ({action, btnType, isBtnDisabled, buttonText, formControls, f
                 </div>
             ))}
             <div className="mt-6 w-full">
-                <Button type={btnType || "submit"} disabled={isBtnDisabled} className="disabled:opacity-60 flex h-11 items-center justify-center px-5">
+                <Button type={btnType || "submit"} disabled={isBtnDisabled} className="disabled:opacity-60 flex h-11 items-center justify-center px-5 dark:bg-slate-500 dark:hover:bg-slate-600  dark:text-white">
                     {buttonText}
                 </Button>
             </div>
