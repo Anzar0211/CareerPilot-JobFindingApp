@@ -1,6 +1,15 @@
+import dynamic from "next/dynamic";
+
+const HomePageButton = dynamic(() => import("@/components/home-page-buttons"), {
+  ssr: false,
+});
+const HomePageText = dynamic(() => import("@/components/landing-page-text"), {
+  ssr: false,
+});
+
 import { fetchProfileAction } from "@/actions";
-import HomePageButton from "@/components/home-page-buttons";
-import HomePageText from "@/components/landing-page-text";
+// import HomePageButton from "@/components/home-page-buttons";
+// import HomePageText from "@/components/landing-page-text";
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { Fragment } from "react";
@@ -17,8 +26,8 @@ const Home = async () => {
             <section className="w-full md:w-[50%] flex flex-col md:px-2 md:px-0 p-5 md:p-10">
               <div className="w-full flex justify-start flex-col h-auto md:pt-7">
                 <span className="flex space-x-2">
-                  <span className="block w-14 mb-2 border-b-2 border-gray-700"></span>
-                  <span className="font-medium text-gray-900 text-2xl">
+                  <span className="block w-14 mb-2 dark:border-white border-b-2 border-gray-700"></span>
+                  <span className="font-medium dark:text-white text-gray-900 text-2xl">
                     Welcome to CareerPilot
                   </span>
                 </span>

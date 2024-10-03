@@ -1,5 +1,8 @@
+import dynamic from 'next/dynamic'
+
+const CandidateActivity = dynamic(() => import('@/components/candidate-activity'), { ssr: false })
 import { fetchJobApplicationsForCandidate, fetchJobsForCandidateAction } from "@/actions";
-import CandidateActivity from "@/components/candidate-activity";
+// import CandidateActivity from "@/components/candidate-activity";
 import { currentUser } from "@clerk/nextjs/server"
 
 const ActivityPage = async() => {

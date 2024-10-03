@@ -70,12 +70,12 @@ const CandidateList = ({
                 className="bg-white shadow-lg w-full max-w-sm rounded-lg overflow-hidden mx-auto mt-4"
               >
                 <div className="px-4 my-6 flex justify-between items-center">
-                  <h3 className="text-lg font-bold">{applicants?.name}</h3>
+                  <h3 className="text-lg font-bold dark:text-black">{applicants?.name}</h3>
                   <Button
                     onClick={() =>
                       handleFetchCandidateDetails(applicants?.candidateUserId)
                     }
-                    className="disabled:opacity-55 flex h-11 items-center justify-center px-5"
+                    className="disabled:opacity-55 flex h-11 items-center justify-center px-5 dark:bg-black dark:text-white"
                   >
                     View Profile
                   </Button>
@@ -126,9 +126,9 @@ const CandidateList = ({
                 .map((item, index) => (
                   <div
                     key={index}
-                    className="w-[100px] flex justify-center items-center h-[35px] bg-black rounded-[4px]"
+                    className="w-[100px] flex justify-center items-center h-[35px] bg-black dark:bg-white rounded-[4px]"
                   >
-                    <h2 className="text-[13px] font-medium text-white">
+                    <h2 className="text-[13px] font-medium text-white dark:text-black">
                       {item}
                     </h2>
                   </div>
@@ -142,9 +142,9 @@ const CandidateList = ({
                   .map((item, index) => (
                     <div
                       key={index}
-                      className="w-[100px] flex justify-center items-center h-[35px] bg-black rounded-[4px]"
+                      className="w-[100px] flex justify-center items-center h-[35px] bg-black rounded-[4px] dark:bg-white"
                     >
-                      <h2 className="text-[13px] font-medium text-white">
+                      <h2 className="text-[13px] font-medium text-white dark:text-black">
                         {item}
                       </h2>
                     </div>
@@ -160,7 +160,7 @@ const CandidateList = ({
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <FaLinkedin className="text-blue-600 text-2xl" />
+                    <FaLinkedin className="text-blue-600 dark:text-blue-300 text-2xl" />
                   </Link>
                 )}
                 {currentCandidateDetails?.candidateInfo?.githubProfile && (
@@ -170,7 +170,7 @@ const CandidateList = ({
                     rel="noopener noreferrer"
                   >
                     <FaGithub className={currentCandidateDetails?.candidateInfo?.githubProfile==="#"?'hidden'
-                    :"text-black text-2xl"
+                    :"text-black text-2xl dark:text-white"
                     } />
                   </Link>
                 )}
@@ -234,7 +234,7 @@ const CandidateList = ({
                     ? true
                     : false
                 }
-                className="disabled:bg-red-600 flex h-11 items-center justify-center px-5"
+                className="disabled:bg-red-600 dark:disabled:bg-red-400 flex h-11 items-center justify-center px-5"
               >
                 {jobApplications
                   .find(

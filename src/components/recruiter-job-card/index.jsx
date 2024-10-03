@@ -19,7 +19,7 @@ const RecruiterJobCard = ({jobItem,jobApplications}) => {
         title={jobItem.title}
         description={jobItem.description}
         footerContent={
-            <Button onClick={()=>setShowApplicantsDrawer(true)} className="flex disabled:opacity-55 h-11 items-center justify-center px-5" disabled={jobApplications.filter(item=>item.jobId===jobItem?._id).length===0}>
+            <Button onClick={()=>setShowApplicantsDrawer(true)} className="flex disabled:opacity-55 h-11 items-center justify-center px-5 dark:bg-black dark:text-white" disabled={jobApplications.filter(item=>item.jobId===jobItem?._id).length===0}>
                 {
                     jobApplications.filter(item=>item.jobId===jobItem?._id).length
                 }{" "}

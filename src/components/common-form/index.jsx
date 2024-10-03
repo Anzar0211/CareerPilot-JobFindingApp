@@ -9,7 +9,7 @@ const CommonForm = ({action, btnType, isBtnDisabled, buttonText, formControls, f
         switch (control.componentType) {
             case 'input':
                 content = (
-                    <div className="relative flex items-center mt-8">
+                    <div className="relative flex items-center mt-8 dark:text-black">
                         <Input
                             type="text"
                             disabled={control.disabled}
@@ -30,7 +30,7 @@ const CommonForm = ({action, btnType, isBtnDisabled, buttonText, formControls, f
             case 'file':
                 content = (
                     <Label htmlFor={control.name} className="flex bg-gray-100 items-center px-3 py-3 mx-auto mt-6 text-center border-2 border-dashed rounded-lg cursor-pointer">
-                        <h2>{control.label}</h2>
+                        <h2 className="dark:text-black">{control.label}</h2>
                         <Input onChange={handleFileChange} id={control.name} type="file" className="hidden"/>
                     </Label>
                 );

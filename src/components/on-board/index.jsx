@@ -79,11 +79,11 @@ const OnBoard = () => {
 
     // console.log(candidateFormData);
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-black">
       <Tabs value={currentTab} onValueChange={handleTabChange}>
         <div className="w-full">
-          <div className="flex items-baseline justify-between border-b pb-6 pt-24">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900">
+          <div className="flex md:flex-row gap-4 flex-col items-baseline justify-between border-b pb-6 pt-24">
+            <h1 className="text-4xl font-bold tracking-tight dark:text-white text-gray-900">
               Welcome to Onboarding
             </h1>
             <TabsList>

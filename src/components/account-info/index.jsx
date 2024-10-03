@@ -63,7 +63,7 @@ const AccountInfo = ({profileInfo}) => {
   return (
     <div className="mx-auto max-w-7xl">
         <div className="flex items-baseline justify-between pb-6 border-b pt-24">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-950">Account Details</h1>
+            <h1 className="text-4xl font-bold tracking-tight dark:text-white text-gray-950">Account Details</h1>
         </div>
         <div className="py-20 pb-24 pt-6">
             <div className="container mx-auto p-0 space-y-8">

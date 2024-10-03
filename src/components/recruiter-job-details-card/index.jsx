@@ -92,16 +92,16 @@ const RecruiterJobDetailsCard = ({jobItem}) => {
                 description={jobItem.description}
                 footerContent={
                     <div className="flex gap-4">
-                        <Button onClick={() => handleShowJobDetails(jobItem)} className="flex h-11 items-center justify-center px-5">
+                        <Button onClick={() => handleShowJobDetails(jobItem)} className="flex h-11 items-center justify-center px-5 dark:bg-black dark:text-white">
                             View 
                         </Button>
-                        <Button onClick={() => handleEditJobDetails(jobItem)} className="flex h-11 items-center justify-center px-5">
+                        <Button onClick={() => handleEditJobDetails(jobItem)} className="flex h-11 items-center justify-center px-5 dark:bg-black dark:text-white">
                             Edit
                         </Button>
                         <AlertDialog>
                         <AlertDialogTrigger asChild>
                             <Button
-                            className="flex h-11 items-center justify-center px-5"
+                            className="flex h-11 items-center justify-center px-5 dark:bg-black dark:text-white"
                             disabled={isClosed} // Disable the button if the job is closed
                             >
                             {isClosed ? "Closed" : "Close"}  {/* Toggle between Close and Closed */}
@@ -144,8 +144,8 @@ const RecruiterJobDetailsCard = ({jobItem}) => {
                         <div className="flex flex-wrap gap-4 mt-6 items-center">
                             <h1>Skills : </h1>
                             {jobItem?.skills.split(",").map((item, index) => (
-                                <div key={index} className="w-[100px] flex justify-center items-center h-[35px] bg-black rounded-[4px]">
-                                    <h2 className="text-[13px] font-medium text-white">{item}</h2>
+                                <div key={index} className="w-[100px] flex justify-center items-center h-[35px] bg-black rounded-[4px] dark:bg-white">
+                                    <h2 className="text-[13px] font-medium text-white dark:text-black">{item}</h2>
                                 </div>
                             ))}
                         </div>

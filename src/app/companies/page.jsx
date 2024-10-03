@@ -1,6 +1,8 @@
+import dynamic from 'next/dynamic'
 
+const Companies = dynamic(() => import('@/components/companies'), { ssr: false })
 import { fetchJobsForCandidateAction, fetchProfileAction } from "@/actions";
-import Companies from "@/components/companies";
+// import Companies from "@/components/companies";
 import { currentUser } from "@clerk/nextjs/server"
 import { redirect } from "next/navigation";
 

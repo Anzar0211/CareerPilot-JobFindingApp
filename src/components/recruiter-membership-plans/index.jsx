@@ -22,7 +22,7 @@ const RecruiterMemberShipPlans = ({profileInfo,plans,handlePayment,handleShowPla
             description={plan.type}
             footerContent={
                 <div className="flex space-x-4">
-                <Button onClick={()=>handleShowPlanDetails(plan)} className="flex h-11 items-center justify-center px-5">
+                <Button onClick={()=>handleShowPlanDetails(plan)} className="flex h-11 items-center justify-center px-5 dark:text-white dark:bg-black">
                     View Details
                 </Button>
 
@@ -33,7 +33,7 @@ const RecruiterMemberShipPlans = ({profileInfo,plans,handlePayment,handleShowPla
                     index < 2) ? null : (
                     <Button
                     onClick={() => handlePayment(plan)}
-                    className="disabled:opacity-65 dark:bg-[#fffa27] flex h-11 items-center justify-center px-5"
+                    className="disabled:opacity-65 dark:bg-black dark:text-white flex h-11 items-center justify-center px-5"
                     >
                     {profileInfo?.memberShipType === "Basic" ||
                     profileInfo?.memberShipType === "Teams"

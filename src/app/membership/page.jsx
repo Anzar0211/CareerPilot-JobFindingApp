@@ -1,5 +1,8 @@
+import dynamic from 'next/dynamic'
+
+const Membership = dynamic(() => import('@/components/membership'), { ssr: false })
 import { fetchProfileAction } from "@/actions";
-import Membership from "@/components/membership"
+// import Membership from "@/components/membership"
 import { currentUser } from "@clerk/nextjs/server"
 import { redirect } from "next/navigation";
 

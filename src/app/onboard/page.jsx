@@ -1,5 +1,8 @@
+import dynamic from 'next/dynamic'
+
+const OnBoard = dynamic(() => import('../../components/on-board'), { ssr: false })
 import { currentUser } from "@clerk/nextjs/server"
-import OnBoard from "../../components/on-board"
+// import OnBoard from "../../components/on-board"
 import { fetchProfileAction } from "@/actions";
 import { redirect } from "next/navigation";
 

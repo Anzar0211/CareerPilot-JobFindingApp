@@ -28,7 +28,7 @@ const Companies=({ jobsList })=> {
   return (
     <div className="mx-auto max-w-7xl">
       <div className="flex items-baseline  justify-between border-b pb-6 pt-24">
-        <h1 className="text-4xl font-bold tracking-tight text-gray-900">
+        <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
           Browse Companies
         </h1>
       </div>
@@ -48,7 +48,7 @@ const Companies=({ jobsList })=> {
                           onClick={() =>
                             handleFilterJobsByCompanyName(companyName)
                           }
-                          className=" h-11 flex items-center justify-center px-5"
+                          className="dark:text-white dark:bg-black h-11 flex items-center justify-center px-5"
                         >
                           See Jobs
                         </Button>

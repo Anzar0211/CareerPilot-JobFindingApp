@@ -3,10 +3,12 @@
 import Link from "next/link"
 import { Button } from "../ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet"
-import { AlignJustify } from "lucide-react"
+import { AlignJustify,Moon,Sun } from "lucide-react"
 import { UserButton } from "@clerk/nextjs"
+import { useTheme } from "next-themes";
 
 const Header = ({ user, profileInfo }) => {
+  const { theme, setTheme } = useTheme();
   const menuItems = [
     {
       label: "Home",
@@ -66,7 +68,7 @@ const Header = ({ user, profileInfo }) => {
                 <span className="sr-only">Toggle Navigation Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="bg-white">
+            <SheetContent side="left" className="bg-white dark:bg-black">
               <div className="grid gap-2 py-6">
                 {menuItems.map((item, index) => (
                   item.show ? (
@@ -80,6 +82,19 @@ const Header = ({ user, profileInfo }) => {
                     </Link>
                   ) : null
                 ))}
+                {theme === "light" ? (
+                  <Moon
+                    className="cursor-pointer mb-4"
+                    fill="dark"
+                    onClick={() => setTheme("dark")}
+                  />
+                ) : (
+                  <Sun
+                    className="cursor-pointer mb-4"
+                    fill="light"
+                    onClick={() => setTheme("light")}
+                  />
+                )}
               </div>
             </SheetContent>
           </Sheet>
@@ -88,18 +103,31 @@ const Header = ({ user, profileInfo }) => {
             CareerPilot
           </Link>
 
-          <nav className="hidden lg:flex items-center ml-auto">
-            <div className="flex gap-6">
+          <nav className="hidden lg:flex items-center ml-auto mr-4">
+            <div className="flex gap-6 items-center"> {/* Add items-center here to align items vertically */}
               {menuItems.map((item, index) =>
                 item.show ? (
                   <Link
                     key={index}
-                    className="group h-9 w-max items-center rounded-md bg-white px-4 py-2 text-sm font-medium"
+                    className="group h-9 w-max items-center rounded-md dark:text-white px-4 py-2 text-sm font-medium"
                     href={item.path}
                   >
                     {item.label}
                   </Link>
                 ) : null
+              )}
+              {theme === "light" ? (
+                <Moon
+                  className="cursor-pointer" // Removed mb-4 to align with other items
+                  fill="dark"
+                  onClick={() => setTheme("dark")}
+                />
+              ) : (
+                <Sun
+                  className="cursor-pointer" // Removed mb-4 to align with other items
+                  fill="light"
+                  onClick={() => setTheme("light")}
+                />
               )}
             </div>
           </nav>

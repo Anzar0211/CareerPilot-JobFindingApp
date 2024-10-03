@@ -1,8 +1,13 @@
+import dynamic from "next/dynamic";
+
+const CommonLayout = dynamic(() => import("@/components/common-layout"), {
+  ssr: false,
+});
 import localFont from "next/font/local";
 import "./globals.css";
 import { Suspense } from "react";
 import Loading from "./loading";
-import CommonLayout from "@/components/common-layout";
+// import CommonLayout from "@/components/common-layout";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "@/components/ui/toaster";
 
@@ -30,7 +35,11 @@ export default function RootLayout({ children }) {
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           <Suspense fallback={<Loading />}>
-            <CommonLayout children={children} />
+            <CommonLayout
+              children={children}
+              attribute="class"
+              defaultTheme="system"
+            />
           </Suspense>
           <Toaster />
         </body>

@@ -9,7 +9,7 @@ const RecruiterJobsDashboard = ({user,profileInfo,jobList,jobApplications}) => {
     <div>
         <div className="mx-auto max-w-7xl">
             <div className="flex flex-col items-baseline justify-between border-b border-gray-200 pb-6 pt-24 md:flex-row">
-                <h1 className="text-4xl font-bold tracking-tight text-gray-900 mb-4 md:mb-0">
+                <h1 className="text-4xl font-bold tracking-tight text-gray-900 mb-4 md:mb-0 dark:text-white">
                     Current Job Applications
                 </h1>
             </div>

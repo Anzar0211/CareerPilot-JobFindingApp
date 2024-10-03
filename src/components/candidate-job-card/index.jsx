@@ -69,7 +69,7 @@ const CandidateJobCard = ({jobItem,profileInfo,jobApplications}) => {
         <Drawer open={showJobDetailsDrawer} onOpenChange={setShowJobDetailsDrawer}>
             <CommonCard icon={<JobIcon/>} title={jobItem?.title} description={jobItem?.companyName}
             footerContent={
-                <Button onClick={()=>setShowJobDetailsDrawer(true)} disabled={jobItem?.isClosed} className="disabled:opacity-25 flex h-11 items-center justify-center px-5">
+                <Button onClick={()=>setShowJobDetailsDrawer(true)} disabled={jobItem?.isClosed} className="disabled:opacity-25 flex h-11 items-center justify-center px-5 dark:bg-black dark:text-white">
                     {jobItem?.isClosed===true ? 'Applications Closed' : 'View Details'}
                 </Button>
             }
@@ -77,7 +77,7 @@ const CandidateJobCard = ({jobItem,profileInfo,jobApplications}) => {
             <DrawerContent className="p-6">
                 <DrawerHeader className="px-0">
                     <div className="flex justify-between">
-                        <DrawerTitle className="text-4xl font-extrabold text-gray-800">{jobItem?.title}
+                        <DrawerTitle className="text-4xl font-extrabold text-gray-800 dark:text-gray-200">{jobItem?.title}
                         </DrawerTitle>
                         <div className="flex gap-3">
                             <Button onClick={handleJobApply} 
@@ -95,21 +95,21 @@ const CandidateJobCard = ({jobItem,profileInfo,jobApplications}) => {
                         </div>
                     </div>
                 </DrawerHeader>
-                <DrawerDescription className="text-2xl font-medium text-gray-600 ">
+                <DrawerDescription className="text-2xl font-medium dark:text-gray-200 text-gray-600 ">
                     {jobItem?.description}
-                    <span className="text-xl font-normal text-gray-500 ml-4">{jobItem?.location}</span>
+                    <span className="text-xl dark:text-gray-200 font-normal text-gray-500 ml-4">{jobItem?.location}</span>
                 </DrawerDescription>
-                <div className="w-[150px] mt-6 flex justify-center items-center h-[40px] bg-black rounded-[4px]">
-                    <h2 className="text-xl font-bold text-white">{jobItem?.type}</h2>
+                <div className="w-[150px] mt-6 flex justify-center items-center h-[40px] bg-black dark:bg-white rounded-[4px]">
+                    <h2 className="text-xl font-bold dark:text-black text-white">{jobItem?.type}</h2>
                 </div>
-                <h3 className="text-2xl font-medium text-black mt-3">Experience: {jobItem?.experience}
+                <h3 className="text-2xl font-medium dark:text-white text-black mt-3">Experience: {jobItem?.experience}
                 </h3>
 
                 <div className="flex gap-4 mt-6">
                     {
                         jobItem?.skills.split(',').map((item,index)=>(
-                            <div key={index} className="w-[100px] flex justify-center items-center h-[35px] bg-black rounded-[4px]">
-                                <h2 className="text-[13px] font-medium text-white">
+                            <div key={index} className="w-[100px] flex justify-center items-center h-[35px] dark:bg-white bg-black rounded-[4px]">
+                                <h2 className="text-[13px] font-medium dark:text-black text-white">
                                     {item}
                                 </h2>
                             </div>

@@ -1,5 +1,8 @@
+import dynamic from 'next/dynamic'
+
+const JobListings = dynamic(() => import('@/components/job-list'), { ssr: false })
 import { fetchJobApplicationsForCandidate, fetchJobApplicationsForRecruiter, fetchJobsForCandidateAction, fetchJobsForRecruiterAction, fetchProfileAction, filterAction } from "@/actions";
-import JobListings from "@/components/job-list"
+// import JobListings from "@/components/job-list"
 import { currentUser } from "@clerk/nextjs/server";
 
 
