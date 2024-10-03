@@ -74,7 +74,7 @@ const JobListings = ({user, profileInfo, jobList, jobApplications, filterCategor
                                             <MenubarContent>
                                                 {menu.options.map((option, optionIndex) => (
                                                     <MenubarItem key={optionIndex} className="flex items-center" onClick={() => handleFilter(menu.id, option)}>
-                                                        <div className={`h-4 w-4 border rounded border-l-gray-900 text-indigo-600 dark:bg-white ${filterParams && Object.keys(filterParams).length > 0 && filterParams[menu.id] && filterParams[menu.id].indexOf(option) > -1 ? "bg-black" : ""}`} />
+                                                        <div className={`h-4 w-4 border rounded border-l-gray-900 text-indigo-600 dark:bg-white  ${filterParams && Object.keys(filterParams).length > 0 && filterParams[menu.id] && filterParams[menu.id].indexOf(option) > -1 ? "bg-black dark:bg-slate-700 dark:border-blue-950 dark:shadow-xl" : ""}`} />
                                                         <Label className="ml-3 cursor-pointer text-sm text-gray-600 dark:text-white">{option}</Label>
                                                     </MenubarItem>
                                                 ))}
