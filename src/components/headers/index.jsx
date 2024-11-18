@@ -59,7 +59,7 @@ const Header = ({ user, profileInfo }) => {
 
   return (
     <div>
-      <header className="flex h-16 w-full shrink-0 items-center sticky top-0 z-50 justify-between  lg:px-6">
+      <header className="flex h-16 w-full shrink-0 items-center sticky top-0 z-50 justify-between  lg:px-6  ">
         <div className="flex justify-between items-center w-full ">
           <Sheet className="lg:hidden">
             <SheetTrigger asChild>

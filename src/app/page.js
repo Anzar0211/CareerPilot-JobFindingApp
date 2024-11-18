@@ -1,4 +1,6 @@
 import dynamic from "next/dynamic";
+import Image from "next/image";
+import landingImage from '../public/rb_5166.png'
 
 const HomePageButton = dynamic(() => import("@/components/home-page-buttons"), {
   ssr: false,
@@ -44,8 +46,8 @@ const Home = async () => {
               </div>
             </section>
             <section className="relative w-full md:w-[70%] flex items-center justify-end md:-mt-10 lg:-mt-20">
-              <img
-                src="https://shorturl.at/msw07"
+              <Image
+                src={landingImage}
                 alt="Job Portal"
                 className="h-full w-auto md:w-full object-contain z-10"
               />
