@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { Button } from "../ui/button";
-import { useTheme } from "next-themes";
 import { 
   Github, 
   Linkedin, 
@@ -10,15 +9,10 @@ import {
   Mail, 
   MapPin, 
   Phone,
-  ArrowUp,
-  Briefcase,
-  Users,
-  TrendingUp
+  ArrowUp
 } from "lucide-react";
 
 const Footer = () => {
-  const { theme } = useTheme();
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -57,12 +51,6 @@ const Footer = () => {
     { icon: Mail, href: "#", label: "Email" },
   ];
 
-  const stats = [
-    { icon: Briefcase, value: "10K+", label: "Active Jobs" },
-    { icon: Users, value: "50K+", label: "Job Seekers" },
-    { icon: TrendingUp, value: "95%", label: "Success Rate" },
-  ];
-
   return (
     <footer className="relative bg-background border-t border-border mt-auto w-full">
       <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
@@ -76,23 +64,6 @@ const Footer = () => {
       </div>
 
       <div className="mx-auto max-w-7xl lg:max-w-full px-6 py-12 lg:px-8">
-        {/* Stats Section */}
-        <div className="mb-12 border-b border-border pb-8">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="flex justify-center mb-3">
-                  <div className="p-3 rounded-full bg-primary/10 dark:bg-primary/20">
-                    <stat.icon className="h-6 w-6 text-primary" />
-                  </div>
-                </div>
-                <div className="text-2xl font-bold text-foreground">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
           

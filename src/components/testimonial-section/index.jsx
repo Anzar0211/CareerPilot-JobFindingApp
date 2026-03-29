@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const testimonials = [
   {
@@ -61,6 +62,9 @@ const testimonials = [
 
 const TestimonialSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const pathname = usePathname();
+
+  if (pathname !== "/") return null;
 
   useEffect(() => {
     const interval = setInterval(() => {

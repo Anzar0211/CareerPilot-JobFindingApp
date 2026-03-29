@@ -13,6 +13,7 @@ const TestimonialSection = dynamic(() => import("@/components/testimonial-sectio
 });
 
 import { fetchProfileAction } from "@/actions";
+import HomeStats from "@/components/home-stats";
 // import HomePageButton from "@/components/home-page-buttons";
 // import HomePageText from "@/components/landing-page-text";
 import { currentUser } from "@clerk/nextjs/server";
@@ -69,6 +70,7 @@ const Home = async () => {
 
 
       <TestimonialSection />
+      <HomeStats />
     </Fragment>
   );
 };
